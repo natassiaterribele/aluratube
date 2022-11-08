@@ -18,6 +18,7 @@ export const StyledFavorites = styled.div`
     div {
         display: flex;
         flex-direction: row;
+        flex-wrap: wrap;
         gap: 15px;
     }
 
@@ -29,8 +30,8 @@ export const StyledFavorites = styled.div`
     }
 
     div a img {
-        width: 100px;
-        height: 100px;
+        max-width: 100px;
+        max-height: 100px;
         border-radius: 50%;
     }
 
