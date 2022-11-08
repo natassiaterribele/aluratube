@@ -3,25 +3,25 @@ import styled from "styled-components"
 import { CSSReset } from "../src/components/CSSReset";
 import Menu from "../src/components/Menu";
 import { StyledTimeline } from "../src/components/Timeline";
+import { StyledFavorites } from "../src/components/Favorites";
 
 
 function HomePage() {
-    //ao inves de digitar direto dentro da tag o css, posso usar variável
-    const estiloDaHomePage = { 
-        //backgroundColor: "red" 
-    };
-
-    //console.log(config.playlists);
-
-    return ( //usando parenteses posso quebrar linha após return
+    return (
         <>
             <CSSReset />
-            <div style={estiloDaHomePage}>
+            <div style={{
+                display: "flex",
+                width: "100%",
+                flexDirection: "column",
+                flex: 1
+            }}>
                 <Menu />
                 <Header />
                 <Timeline playlists={config.playlists}>
                     Conteúdo
                 </Timeline>
+                <Favorites favorites={config.favorites}></Favorites>
             </div>
         </>    
     )
@@ -30,19 +30,15 @@ function HomePage() {
 export default HomePage
 
 
-// function Menu() {
-//     return (
-//         <div>
-//             Menu
-//         </div>
-//     )
-// }
-
 const StyledHeader = styled.div`
-    img {
-        width: 80px;
-        height: 80px;
-        border-radius: 50%;
+    .banner {
+        width: 100%;
+        height: 50vh;
+    }
+    .banner img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
     .user-info {
         display: flex;
@@ -51,12 +47,19 @@ const StyledHeader = styled.div`
         padding: 16px 32px;
         gap: 16px
     }
+    .user-info img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+    }
 `;
 
 function Header() {
     return (
         <StyledHeader>
-            {/*<img src="banner" />*/}
+            <div className="banner">
+                <img src={config.banner}/>
+            </div>
             <section className="user-info">
                 <img src={`https://github.com/${config.github}.png`} />
                 <div>
@@ -74,7 +77,6 @@ function Header() {
 }
 
 function Timeline(props) {
-    //console.log("Dentro do componente", props.playlists);
     const playlistNames = Object.keys(props.playlists);
     //statement
     //retorno por expressao
@@ -104,5 +106,34 @@ function Timeline(props) {
                 })
             }
         </StyledTimeline>
+    )
+}
+
+function Favorites(props) {
+    const favoritesList = Object.keys(props.favorites);
+
+    return (
+        <StyledFavorites>
+            {favoritesList.map((favorite) => {
+                const channels = props.favorites[favorite];
+                return (
+                    <section>
+                        <h2>{favorite}</h2>
+                        <div>
+                            {channels.map((channel) => {
+                                return (
+                                    <a href={channel.url}>
+                                        <img src={channel.img} />
+                                        <span>
+                                            {channel.name}
+                                        </span>
+                                    </a>
+                                )
+                            })}
+                        </div>
+                    </section>
+                )
+            })}
+        </StyledFavorites>
     )
 }

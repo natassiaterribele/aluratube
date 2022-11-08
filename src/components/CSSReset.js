@@ -21,6 +21,7 @@ export const CSSReset = createGlobalStyle`
     flex: 1;
   }
   #__next {
+    width: 100%;
     display: flex;
     flex: 1;
   }

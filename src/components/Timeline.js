@@ -4,7 +4,8 @@ export const StyledTimeline = styled.div`
   flex: 1;
   width: 100%;
   padding: 16px;
-  overflow: hidden;
+  overflow-x: hidden;
+  background-color: #F9F9F9;
   h2 {
     font-size: 16px;
     margin-bottom: 16px;
@@ -21,11 +22,11 @@ export const StyledTimeline = styled.div`
   section {
     width: 100%;
     padding: 0;
-    overflow: hidden;
+    overflow-x: hidden;
     padding: 16px;
     div {
       
-      width: calc(100vw - 16px * 4);
+      width: calc(100vw - 16px * 5);
       display: grid;
       grid-gap: 16px;
       grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
