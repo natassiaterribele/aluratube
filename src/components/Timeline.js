@@ -26,7 +26,7 @@ export const StyledTimeline = styled.div`
     padding: 16px;
     div {
       
-      width: calc(100vw - 16px * 5);
+      width: calc(100vw - 16px * 4);
       display: grid;
       grid-gap: 16px;
       grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
