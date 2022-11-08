@@ -122,8 +122,7 @@
         }
       ]
     },
-    "favorites": {
-      "AluraTubes Favoritos": [
+    "favorites": [
         {
           "img": "https://yt3.ggpht.com/xqhIoXspeX7eqouJvNHl1xqpv9213Pl26ENZbuouXxO2RlDadjsveNXfgnj8GTUk7thFYUkVRg=s88-c-k-c0x00ffffff-no-rj",
           "name": "Alura Cursos Online",
@@ -146,5 +145,4 @@
           "url": "https://www.youtube.com/c/rafaellaballerini"
         }
       ]
-    }
 }

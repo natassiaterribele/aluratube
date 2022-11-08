@@ -110,30 +110,24 @@ function Timeline(props) {
 }
 
 function Favorites(props) {
-    const favoritesList = Object.keys(props.favorites);
-
+    const favoritesList = props.favorites;
     return (
         <StyledFavorites>
-            {favoritesList.map((favorite) => {
-                const channels = props.favorites[favorite];
-                return (
-                    <section>
-                        <h2>{favorite}</h2>
-                        <div>
-                            {channels.map((channel) => {
-                                return (
-                                    <a href={channel.url}>
-                                        <img src={channel.img} />
-                                        <span>
-                                            {channel.name}
-                                        </span>
-                                    </a>
-                                )
-                            })}
-                        </div>
-                    </section>
-                )
-            })}
+            <section>
+                <h2>AluraTubes Favoritos</h2>
+                <div>
+                    {favoritesList.map((favorito) => {
+                        return (
+                            <a href={favorito.url}>
+                                <img src={favorito.img} />
+                                <span>
+                                    {favorito.name}
+                                </span>
+                            </a>
+                        )
+                    })}
+                </div>
+            </section>    
         </StyledFavorites>
     )
 }
