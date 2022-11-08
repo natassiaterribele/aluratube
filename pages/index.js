@@ -33,8 +33,11 @@ export default HomePage
 const StyledHeader = styled.div`
     .banner {
         width: 100%;
-        height: 50vh;
+        height: 25vw;
+        min-height: 200px;
+        max-height: 350px;
     }
+
     .banner img {
         width: 100%;
         height: 100%;
