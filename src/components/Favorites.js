@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const StyledFavorites = styled.div`
     padding: 16px;
     width: 100%;
-    background-color: #F9F9F9;
+    
 
     h2 {
         font-size: 16px;
